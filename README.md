@@ -76,3 +76,7 @@ docker compose up --build
 | ![知华科技微信 1](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信 2](docs/images/zhuatech-wechat-consulting-2.png) |
 
 搜索关键词：OKR 管理系统源码、目标管理软件、绩效管理系统、Check-in、战略执行、Java OKR、Vue OKR、知华科技。
+
+## 关键结果轨迹预测
+
+新增 `POST /api/okr/insights/key-result-trajectory`。接口结合关键结果当前进度、计划周期和最近更新数据，计算实际进度与期望进度的偏差，并预测周期结束时的完成度，输出 `ON_TRACK`、`WATCH` 或 `OFF_TRACK`。它适合用于周度 OKR 复盘、风险目标提醒和管理驾驶舱，不替代负责人对业务环境的人工判断。
