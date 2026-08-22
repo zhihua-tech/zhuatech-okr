@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.okr.service;
 import cn.zhuatech.okr.common.BusinessException; import cn.zhuatech.okr.dto.OkrDto.*; import cn.zhuatech.okr.model.*; import cn.zhuatech.okr.repository.*; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional; import java.util.*;
 @Service @Transactional(readOnly=true) public class OkrService {
