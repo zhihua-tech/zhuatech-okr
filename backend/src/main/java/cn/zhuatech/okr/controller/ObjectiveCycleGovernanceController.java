@@ -1,0 +1,20 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.okr.controller;
+
+import cn.zhuatech.okr.common.ApiResponse;
+import cn.zhuatech.okr.service.ObjectiveCycleGovernanceService;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/enterprise/okr")
+public class ObjectiveCycleGovernanceController {
+    private final ObjectiveCycleGovernanceService service;
+    public ObjectiveCycleGovernanceController(ObjectiveCycleGovernanceService service) { this.service = service; }
+
+    @PostMapping("/objective-cycle-governance")
+    public ApiResponse<ObjectiveCycleGovernanceService.Assessment> assess(
+        @Valid @RequestBody ObjectiveCycleGovernanceService.Request request) {
+        return ApiResponse.ok(service.assess(request));
+    }
+}

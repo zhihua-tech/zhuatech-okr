@@ -80,3 +80,7 @@ docker compose up --build
 ## 关键结果轨迹预测
 
 新增 `POST /api/okr/insights/key-result-trajectory`。接口结合关键结果当前进度、计划周期和最近更新数据，计算实际进度与期望进度的偏差，并预测周期结束时的完成度，输出 `ON_TRACK`、`WATCH` 或 `OFF_TRACK`。它适合用于周度 OKR 复盘、风险目标提醒和管理驾驶舱，不替代负责人对业务环境的人工判断。
+
+## 企业级 OKR 周期治理
+
+新增 `POST /api/enterprise/okr/objective-cycle-governance`，将结果指标、KR 数量、Check-in 时效、信心度、进度证据及依赖责任纳入统一治理，返回 `ON_TRACK / REVIEW / BLOCKED`。详见 [周期治理说明](docs/ENTERPRISE_CYCLE_GOVERNANCE.md)。
