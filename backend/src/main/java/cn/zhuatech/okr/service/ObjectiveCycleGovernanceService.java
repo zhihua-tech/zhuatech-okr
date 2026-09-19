@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ObjectiveCycleGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -33,12 +39,21 @@ public class ObjectiveCycleGovernanceService {
         return new Assessment(Decision.ON_TRACK, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String objectiveId, @NotBlank String ownerId,
                           boolean cycleOpen, @Min(0) int keyResultCount,
                           @Min(0) int checkInAgeDays, @Min(1) int maxCheckInAgeDays,
                           @Min(0) @Max(100) int confidence,
                           boolean progressEvidenceComplete, boolean dependenciesOwned,
                           boolean outcomeMetricDefined) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, List<String> blockers, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { ON_TRACK, REVIEW, BLOCKED }
 }

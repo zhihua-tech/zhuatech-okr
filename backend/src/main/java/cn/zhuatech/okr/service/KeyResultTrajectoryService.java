@@ -11,8 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class KeyResultTrajectoryService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         double averageProgress = request.keyResults().stream().mapToInt(KeyResult::progressPercent).average().orElse(0);
         double expectedProgress = Math.min(100, request.daysElapsed() * 100D / request.cycleDays());
@@ -29,12 +35,24 @@ public class KeyResultTrajectoryService {
             round(forecastProgress), (int) blocked, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double value) { return Math.round(value * 100D) / 100D; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String objectiveCode, @Min(0) int daysElapsed,
                           @Min(1) int cycleDays, @NotEmpty List<@Valid KeyResult> keyResults) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record KeyResult(@NotBlank String name, @Min(0) @Max(100) int progressPercent,
                             @Min(0) @Max(100) int confidencePercent, boolean blocked) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String objectiveCode, double averageProgress, double expectedProgress,
                          double forecastProgress, int blockedKeyResults, String status,
                          List<String> actions) {}

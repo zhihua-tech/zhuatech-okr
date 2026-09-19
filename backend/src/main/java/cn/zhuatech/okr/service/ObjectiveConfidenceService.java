@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.okr.service;
 import jakarta.validation.constraints.*; import org.springframework.stereotype.Service; import java.util.ArrayList; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service public class ObjectiveConfidenceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request r){
         double deliveryIndex=r.elapsedPercent()==0?100:Math.min(120,r.progressPercent()*100.0/r.elapsedPercent());
         double velocityIndex=r.requiredVelocity()==0?100:Math.min(120,r.weeklyVelocity()*100.0/r.requiredVelocity());
@@ -11,10 +17,19 @@ import jakarta.validation.constraints.*; import org.springframework.stereotype.S
         List<String> actions=new ArrayList<>(); if(variance<-10)actions.add("缩小目标范围或增加关键资源"); if(r.keyResultsAtRisk()>0)actions.add("逐项明确风险关键结果的恢复计划"); if(r.blockers()>0)actions.add("升级跨团队阻塞事项并设置解决期限"); if(velocityIndex<80)actions.add("提高周度交付速度或调整目标承诺");
         return new Result(round(variance),round(deliveryIndex),round(velocityIndex),round(score),forecast,actions);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double v){return Math.round(v*100)/100.0;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String objectiveId,@DecimalMin("0") @DecimalMax("100") double elapsedPercent,
         @DecimalMin("0") @DecimalMax("100") double progressPercent,@Min(0) int keyResultsAtRisk,@Min(0) int blockers,
         @Min(0) @Max(100) int confidenceVote,@DecimalMin("0") double weeklyVelocity,@DecimalMin("0") double requiredVelocity){}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(double scheduleVariance,double deliveryIndex,double velocityIndex,double confidenceScore,String forecast,List<String> actions){}
 }
 

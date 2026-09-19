@@ -6,9 +6,15 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class KeyResultTrajectoryServiceTests {
     private final KeyResultTrajectoryService service = new KeyResultTrajectoryService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void flagsBlockedObjectiveBehindTrajectory() {
         var result = service.forecast(new KeyResultTrajectoryService.Request("O-2026-Q3", 45, 90, List.of(
             new KeyResultTrajectoryService.KeyResult("收入增长", 25, 50, true),
@@ -17,6 +23,9 @@ class KeyResultTrajectoryServiceTests {
         assertEquals("OFF_TRACK", result.status());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void keepsHealthyObjectiveOnTrack() {
         var result = service.forecast(new KeyResultTrajectoryService.Request("O-2026-Q4", 30, 90, List.of(
             new KeyResultTrajectoryService.KeyResult("交付效率", 40, 80, false),
