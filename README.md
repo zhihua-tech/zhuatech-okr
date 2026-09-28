@@ -1,5 +1,7 @@
 # 知华科技 OKR：把战略变成每周可见的行动
 
+[简体中文](README.md) | [English](README.en.md)
+
 ZhuaTech OKR 是一套前后端分离的目标与关键成果管理系统社区源码版，由**上海如静知华信息科技有限公司**发布。[访问知华科技官网](https://www.zhuatech.cn/)。
 
 > 目标设定只是开始。对齐、Check-in、风险协同和复盘，才构成执行闭环。
