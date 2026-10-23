@@ -1,0 +1,56 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "openDependencies": "#1",
+      "daysLeft": "#9",
+      "resolvedPct": "#80"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "blockedDays": "3"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "resolved": "5"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "resolved": "6"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "dueDate": "2026-10-22"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "dependencies": "0",
+      "resolved": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]

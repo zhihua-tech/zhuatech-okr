@@ -1,0 +1,81 @@
+{
+  "slug": "okr",
+  "title": "关键依赖阻塞与解除时限核对",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "dependencies",
+      "label": "依赖总数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "resolved",
+      "label": "已解除依赖",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "blockedDays",
+      "label": "已阻塞天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "escalateAfter",
+      "label": "升级阈值天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "dueDate",
+      "label": "目标截止",
+      "type": "DATE"
+    }
+  ],
+  "columns": [
+    {
+      "key": "openDependencies",
+      "label": "未解除依赖"
+    },
+    {
+      "key": "daysLeft",
+      "label": "目标剩余天数"
+    },
+    {
+      "key": "resolvedPct",
+      "label": "依赖解除比例%"
+    }
+  ],
+  "description": "区分未完成依赖、阻塞天数和目标剩余天数，突出跨团队阻塞，不重复原有关键成果进度评分。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "dependencies": "5",
+        "resolved": "4",
+        "blockedDays": "2",
+        "escalateAfter": "3",
+        "dueDate": "2026-11-01"
+      }
+    ]
+  }
+}
